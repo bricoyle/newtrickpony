@@ -161,8 +161,17 @@
     .section-head{
       display:flex; justify-content:space-between; gap:20px; align-items:end;
       margin-bottom:24px;
-      margin-top:12px;
       flex-wrap:wrap;
+    }
+    .portfolio-shell .section-head{
+      margin-top:0;
+      margin-bottom:14px;
+    }
+    .portfolio-shell .section-head h2{
+      margin-top:0;
+    }
+    .portfolio-shell .container > .section-head:first-child{
+      padding-top:0;
     }
     .section-head h2{
       margin:8px 0 0;
@@ -197,9 +206,9 @@
     }
     .portfolio-shell{
       background:transparent;
-      margin-top:1px;
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
+      padding-top:4px;
     }
     .toolbar{
       display:flex; gap:10px; flex-wrap:wrap;
@@ -339,6 +348,22 @@
     .focus-card p{
       color:#0f0e0c;
     }
+    .focus-card{
+      cursor:pointer;
+      transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    }
+    .focus-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(15,14,12,.18);
+    }
+    .focus-card:focus-visible{
+      outline:3px solid rgba(184,76,42,.35);
+      outline-offset:2px;
+    }
+    .focus-card.active{
+      box-shadow:0 0 0 3px rgba(184,76,42,.28), var(--shadow);
+      border-color:rgba(15,14,12,.22);
+    }
     .tech-card{
       background:#c9922a;
       border-color:rgba(15,14,12,.10);
@@ -441,26 +466,26 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Focus Areas</h2>
+                        <h2>Focus Areas</h2>
             <p>
               Technologies spanning health, safety, environmental systems, and agricultural biotechnology.
             </p>
           </div>
         </div>
         <div class="pillars">
-          <article class="panel pillar focus-card">
+          <article class="panel pillar focus-card focus-filter" role="button" tabindex="0" data-filter="Health & Veterinary Care" aria-label="Filter by Health and Veterinary Care">
             <h3>Health & Veterinary Care</h3>
             <p>Oral care, non-invasive sampling, diagnostics, GI systems, and imaging-oriented medical technologies.</p>
           </article>
-          <article class="panel pillar focus-card">
+          <article class="panel pillar focus-card focus-filter" role="button" tabindex="0" data-filter="Athletic Safety & Biomechanics" aria-label="Filter by Athletic Safety and Biomechanics">
             <h3>Athletic Safety & Biomechanics</h3>
             <p>Protection, sensing, and test systems centered on rotational injury and impact biomechanics.</p>
           </article>
-          <article class="panel pillar focus-card">
+          <article class="panel pillar focus-card focus-filter" role="button" tabindex="0" data-filter="Public & Environmental Safety" aria-label="Filter by Public and Environmental Safety">
             <h3>Public & Environmental Safety</h3>
             <p>Acoustic control, wildfire detection, and public-health devices for real-world deployment.</p>
           </article>
-          <article class="panel pillar focus-card">
+          <article class="panel pillar focus-card focus-filter" role="button" tabindex="0" data-filter="Agricultural Biotechnology" aria-label="Filter by Agricultural Biotechnology">
             <h3>Agricultural Biotechnology</h3>
             <p>Self-powered in-vivo capsule systems intended to improve livestock health, sensing, and sustainability.</p>
           </article>
@@ -472,7 +497,7 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Technology Portfolio</h2>
+                        <h2>Technology Portfolio</h2>
             <p>
               Patented and patent-pending technologies.
             </p>
@@ -714,17 +739,42 @@
 
   <script>
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const focusFilters = document.querySelectorAll('.focus-filter');
     const cards = document.querySelectorAll('.card');
 
+    function applyFilter(filter, scrollToPortfolio = true) {
+      filterButtons.forEach(button => {
+        button.classList.toggle('active', button.dataset.filter === filter);
+      });
+
+      focusFilters.forEach(box => {
+        box.classList.toggle('active', box.dataset.filter === filter);
+      });
+
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.classList.toggle('hidden', !show);
+      });
+
+      if (scrollToPortfolio) {
+        const portfolioSection = document.getElementById('portfolio');
+        if (portfolioSection) {
+          portfolioSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+
     filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        cards.forEach(card => {
-          const show = filter === 'all' || card.dataset.category === filter;
-          card.classList.toggle('hidden', !show);
-        });
+      btn.addEventListener('click', () => applyFilter(btn.dataset.filter, false));
+    });
+
+    focusFilters.forEach(box => {
+      box.addEventListener('click', () => applyFilter(box.dataset.filter, true));
+      box.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          applyFilter(box.dataset.filter, true);
+        }
       });
     });
 
@@ -738,3 +788,4 @@
   </script>
 </body>
 </html>
+
