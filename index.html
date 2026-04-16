@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Trick Pony | Brian Michael Coyle Innovation Portfolio</title>
+  <meta name="description" content="Patented and patent-pending technologies by Brian Michael Coyle across veterinary care, diagnostics, athletic safety, public safety, environmental monitoring, and agricultural biotechnology." />
+  <style>
+    :root{
+      --bg:#f5f0e8;
+      --bg2:#f5f0e8;
+      --panel:#ffffff;
+      --panel2:#ffffff;
+      --text:#0f0e0c;
+      --muted:#0f0e0c;
+      --line:rgba(15,14,12,.12);
+      --accent:#b84c2a;
+      --accent2:#c9922a;
+      --shadow:0 12px 30px rgba(0,0,0,.08);
+      --max:1180px;
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background:#f5f0e8;
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%}
+    .container{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .nav{
+      position:sticky; top:0; z-index:20;
+      background:transparent;
+      border-bottom:none;
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:flex-start;
+      padding:26px 32px;
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+      gap:20px;
+      background:#b84c2a;
+      border-radius:0 0 0 0;
+    }
+    .brand small{
+      display:block;
+      font-size:11px;
+      letter-spacing:.24em;
+      text-transform:uppercase;
+      color:#ffffff;
+      margin-bottom:4px;
+    }
+    .brand strong{
+      font-size:3.1rem;
+      font-weight:700;
+    }
+    .nav-links{
+      display:flex; gap:18px; flex-wrap:wrap;
+      font-size:.95rem; color:#ffffff;
+    }
+    .nav-links a:hover{color:#ffffff;opacity:.88}
+
+    .hero{
+      min-height:auto;
+      display:flex;
+      align-items:flex-start;
+      background:transparent;
+      padding-top:0;
+      padding-bottom:0;
+    }
+    .hero-grid{
+      display:grid; grid-template-columns:1fr; gap:0;
+      align-items:start;
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:9px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:#ffffff;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.72rem;
+      background:rgba(255,255,255,.08);
+    }
+    h1{
+      margin:18px 0 16px;
+      font-size:clamp(1.4rem, 3vw, 2.8rem);
+      line-height:1.05;
+      letter-spacing:-.03em;
+      max-width:18ch;
+    }
+    .hero p{
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:74ch;
+      margin:0 0 26px;
+    }
+    .hero-actions{
+      display:flex; gap:16px; flex-wrap:wrap;
+    }
+
+    .hero-content-panel{
+      background:#0f0e0c;
+      padding:42px 46px;
+      border-radius:0 0 28px 28px;
+      width:100%;
+      box-shadow:0 18px 34px rgba(0,0,0,.18);
+    }
+    .hero-content-inner{
+      max-width:980px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius:16px;
+      padding:14px 18px;
+      font-weight:600;
+      border:1px solid var(--line);
+      transition:transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.2)}
+    .btn-primary{
+      background:#ffffff;
+      color:#0f0e0c;
+      border:none;
+    }
+    .panel{
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .stats{
+      display:grid; gap:14px;
+    }
+    .stat{
+      padding:18px 18px 16px;
+    }
+    .stat .label{
+      color:var(--muted);
+      text-transform:uppercase;
+      font-size:.72rem;
+      letter-spacing:.18em;
+    }
+    .stat .value{
+      font-size:1.04rem;
+      line-height:1.45;
+      margin-top:8px;
+      color:var(--text);
+    }
+    section{
+      padding:64px 0;
+    }
+    .hero + section{
+      padding-top:8px;
+    }
+    .section-head{
+      display:flex; justify-content:space-between; gap:20px; align-items:end;
+      margin-bottom:24px;
+      flex-wrap:wrap;
+    }
+    .section-head h2{
+      margin:8px 0 0;
+      font-size:clamp(1.7rem, 2.5vw, 2.7rem);
+      letter-spacing:-.02em;
+    }
+    .section-head p{
+      margin:10px 0 0;
+      color:#0f0e0c;
+      max-width:62ch;
+    }
+    .tag{
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.72rem;
+    }
+    .pillars{
+      display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;
+    }
+    .pillar{
+      padding:22px;
+    }
+    .pillar h3{
+      margin:0 0 10px;
+      font-size:1.16rem;
+    }
+    .pillar p{
+      margin:0;
+      color:#0f0e0c;
+      font-size:.96rem;
+    }
+    .portfolio-shell{
+      background:transparent;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .toolbar{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin:18px 0 26px;
+    }
+    .filter-btn{
+      background:#ffffff;
+      color:#0f0e0c;
+      border:1px solid rgba(15,14,12,.14);
+      border-radius:999px;
+      padding:10px 14px;
+      font-size:.88rem;
+      cursor:pointer;
+    }
+    .filter-btn.active{
+      color:#0f0e0c;
+      background:linear-gradient(135deg, var(--accent2), #d7fff1);
+      border-color:transparent;
+      font-weight:700;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+    .card{
+      padding:22px;
+      transition:transform .16s ease, border-color .16s ease, background .16s ease;
+    }
+    .card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(255,255,255,.18);
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+    }
+    .meta{
+      display:flex; justify-content:space-between; gap:10px; align-items:start;
+      margin-bottom:16px;
+    }
+    .chip{
+      font-size:.72rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      color:var(--muted);
+      padding:7px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+    }
+    .status{
+      font-size:.72rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      color:#0f0e0c;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:1.36rem;
+      line-height:1.18;
+      color:#ffffff;
+    }
+    .card p{
+      margin:0;
+      color:#0f0e0c;
+      font-size:.96rem;
+      line-height:1.55;
+    }
+    .expand{
+      margin-top:16px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--accent);
+      font-weight:600;
+      background:none;
+      border:none;
+      padding:0;
+      cursor:pointer;
+      font:inherit;
+    }
+    .details{
+      margin-top:14px;
+      color:#0f0e0c;
+      display:none;
+      border-top:1px solid rgba(15,14,12,.18);
+      padding-top:14px;
+      font-size:.94rem;
+      line-height:1.55;
+    }
+    .details.open{display:block}
+    .feature-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+    }
+    .feature{
+      padding:28px;
+    }
+    .feature h3{
+      margin:8px 0 12px;
+      font-size:1.55rem;
+    }
+    .feature p{
+      color:var(--muted);
+      margin:0 0 12px;
+    }
+    .split{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:16px;
+    }
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:#0f0e0c;
+    }
+    .list li + li{margin-top:8px}
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    .footer{
+      padding:28px 0 42px;
+      border-top:1px solid var(--line);
+      color:#0f0e0c;
+    }
+    .footer-flex{
+      display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    }
+
+    .focus-card{
+      background:#c9922a;
+      border-color:rgba(15,14,12,.08);
+    }
+    .focus-card h3{
+      color:#ffffff;
+    }
+    .focus-card p{
+      color:#0f0e0c;
+    }
+    .tech-card{
+      background:#c9922a;
+      border-color:rgba(15,14,12,.10);
+    }
+    .tech-card h3{
+      color:#ffffff;
+    }
+    .tech-card p,
+    .tech-card .details,
+    .tech-card .status,
+    .tech-card .chip{
+      color:#0f0e0c;
+    }
+    .tech-card .chip{
+      border-color:rgba(15,14,12,.18);
+      background:rgba(255,255,255,.18);
+    }
+    .tech-card .expand{
+      color:#ffffff;
+    }
+    .tech-card .meta{
+      display:flex;
+      justify-content:flex-start;
+      margin-bottom:14px;
+    }
+    .tech-card .chip{
+      display:inline-flex;
+      align-items:center;
+      font-size:.72rem;
+      text-transform:none;
+      letter-spacing:.02em;
+      color:#0f0e0c;
+      border:1px solid rgba(15,14,12,.18);
+      background:rgba(255,255,255,.22);
+      border-radius:999px;
+      padding:7px 12px;
+      font-weight:600;
+    }
+    .tech-card .status{
+      display:none;
+    }
+    .patent-status{
+      font-weight:700;
+      margin-bottom:10px;
+      color:#0f0e0c;
+    }
+    .feature{
+      background:#ffffff;
+    }
+    .muted{color:var(--muted)}
+    .hidden{display:none!important}
+    @media (max-width: 1060px){
+      .hero-grid, .feature-grid, .split, .about-grid{grid-template-columns:1fr}
+      .pillars{grid-template-columns:repeat(2, 1fr)}
+      .grid{grid-template-columns:repeat(2, 1fr)}
+    }
+    @media (max-width: 720px){
+      .nav-inner{align-items:flex-start; flex-direction:column}
+      .pillars, .grid{grid-template-columns:1fr}
+      .hero{padding-top:0;min-height:unset}
+      .hero-content-panel{width:100%;padding:28px 24px}
+      .hero-content-inner{max-width:100%}
+      .section-head{margin-bottom:18px}
+      .card, .pillar, .feature, .stat{padding:18px}
+      .btn{width:100%}
+      .hero-actions{display:grid; grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <small>Brian Michael Coyle</small>
+        <strong style="color:#ffffff;font-style:italic;">New Trick Pony</strong>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content-panel">
+          <div class="hero-content-inner">
+          <div class="eyebrow">Patented and patent-pending technologies</div>
+          <h1 style="color:#ffffff">Applied inventions across health, safety, and engineering.</h1>
+          <p style="color:#ffffff">
+            New Trick Pony presents the innovation portfolio of Brian Michael Coyle:
+            technologies spanning veterinary care, diagnostics, athletic safety, public safety,
+            agricultural biotechnology, and environmental monitoring. A cross-disciplinary technology portfolio built around practical unmet needs and commercialization pathways.
+          </p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="tag">Focus areas</div>
+            <h2>Focus Areas</h2>
+            <p>
+              Technologies spanning health, safety, environmental systems, and agricultural biotechnology.
+            </p>
+          </div>
+        </div>
+        <div class="pillars">
+          <article class="panel pillar focus-card">
+            <h3>Health & Veterinary Care</h3>
+            <p>Oral care, non-invasive sampling, diagnostics, GI systems, and imaging-oriented medical technologies.</p>
+          </article>
+          <article class="panel pillar focus-card">
+            <h3>Athletic Safety & Biomechanics</h3>
+            <p>Protection, sensing, and test systems centered on rotational injury and impact biomechanics.</p>
+          </article>
+          <article class="panel pillar focus-card">
+            <h3>Public & Environmental Safety</h3>
+            <p>Acoustic control, wildfire detection, and public-health devices for real-world deployment.</p>
+          </article>
+          <article class="panel pillar focus-card">
+            <h3>Agricultural Biotechnology</h3>
+            <p>Self-powered in-vivo capsule systems intended to improve livestock health, sensing, and sustainability.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-shell">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="tag">Technology portfolio</div>
+            <h2>Technology Portfolio</h2>
+            <p>
+              Patented and patent-pending technologies.
+            </p>
+          </div>
+        </div>
+
+        <div class="toolbar" aria-label="Portfolio filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Health & Veterinary Care">Health & Veterinary Care</button>
+          <button class="filter-btn" data-filter="Athletic Safety & Biomechanics">Athletic Safety & Biomechanics</button>
+          <button class="filter-btn" data-filter="Public & Environmental Safety">Public & Environmental Safety</button>
+          <button class="filter-btn" data-filter="Agricultural Biotechnology">Agricultural Biotechnology</button>
+        </div>
+
+        <div class="grid" id="portfolioGrid">
+          <article class="panel card tech-card" data-category="Health &amp; Veterinary Care">
+            <div class="meta">
+              <span class="chip">Health &amp; Veterinary Care</span>
+            </div>
+            <h3>Chulites™</h3>
+            <p>A modular device that dogs chew, emitting wavelength-specific light that eliminates pathogens causing canine periodontitis, dog owners&#x27; largest medical expense, affecting the majority of dogs.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patented #11,122,775</div>
+              Chulites robust core contains safe NiMH batteries and LEDs that emit 405 nm light, an FDA authorized visible violet wavelength that eliminates gum disease bacteria like Porphyromonas and Tannerella. A replaceable chew-toy housing surrounds the core. Designed as a home-use veterinary medical device, not a toy, it has a clinical validation path.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Health &amp; Veterinary Care">
+            <div class="meta">
+              <span class="chip">Health &amp; Veterinary Care</span>
+            </div>
+            <h3>Hydrogel Ball™</h3>
+            <p>A soft, biocompatible sampling device that captures, collects, and concentrates biomarkers from saliva, for both veterinary and human diagnostics. The non-invasive form factor reduces regulatory barriers and makes sampling practical.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patent Pending &amp; Published</div>
+              A fluid-permeable enclosure retains a hydrogel matrix functionalized with ligands that bind cancer markers, disease indicators, periodontal enzymes, and hormones.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Health &amp; Veterinary Care">
+            <div class="meta">
+              <span class="chip">Health &amp; Veterinary Care</span>
+            </div>
+            <h3>Diagnostic Platform</h3>
+            <p>A diagnostic platform for streamlined, non-invasive sample analysis in veterinary and human health.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patent Pending</div>
+              Provides a versatile foundation for detecting a range of biological markers, with design principles that support adaptation across diagnostic contexts. Further details are held confidential pending patent prosecution.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Athletic Safety &amp; Biomechanics">
+            <div class="meta">
+              <span class="chip">Athletic Safety &amp; Biomechanics</span>
+            </div>
+            <h3>Biomechanically Realistic Brain Model™</h3>
+            <p>A layered physical brain model designed to study how rotational and impact loading affect gray and white matter under realistic test conditions.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patent Pending &amp; Published</div>
+              No standards define brain injury for helmets, since you can&#x27;t inspect a player&#x27;s brain after impact. The model brain, placed in a skull form on an impact tester, subjected to controlled collisions, provides the needed data. Thin layer molds, designed from hundreds of brain scan slices, cast 5 distinct materials, each mimicking a brain tissue, are interleaved in realistic brain architecture, instrumented for analysis.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Public &amp; Environmental Safety">
+            <div class="meta">
+              <span class="chip">Public &amp; Environmental Safety</span>
+            </div>
+            <h3>Siren Guide™</h3>
+            <p>A metamaterial wavefront-shaping adapter that directs emergency vehicle siren sound at street level while reducing noise in multistory offices and apartments.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patented #11,202,144</div>
+              Siren noise is the number-one public complaint in dense cities like New York, causes hypertension, and decreases property values. Siren Guide attaches directly to an existing siren horn and targets sound energy where it is needed.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Athletic Safety &amp; Biomechanics">
+            <div class="meta">
+              <span class="chip">Athletic Safety &amp; Biomechanics</span>
+            </div>
+            <h3>Steadihelm™</h3>
+            <p>A Halbach-array magnetic damping system that actively counters rotational forces transmitted to the head during impact — addressing the root cause of concussion.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patented #11,464,270</div>
+              Steadihelm arrays magnetic dipoles between a helmet shell and an inner head cover. When a collision drives the helmet one way, negative torque drives the head cover the opposite direction.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Athletic Safety &amp; Biomechanics">
+            <div class="meta">
+              <span class="chip">Athletic Safety &amp; Biomechanics</span>
+            </div>
+            <h3>Magnetic Rotation Sensor™</h3>
+            <p>An ultra-low power sensor measures tangential velocity, direction, and duration; current sensors only infer these from instantaneous acceleration measures.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patented</div>
+              Applicable to motion tracking in both controlled testing environments and real-world use.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Athletic Safety &amp; Biomechanics">
+            <div class="meta">
+              <span class="chip">Athletic Safety &amp; Biomechanics</span>
+            </div>
+            <h3>Athletic Airbag System</h3>
+            <p>A protective airbag concept for athletics that activates when high-risk motion events are detected, to help stabilize the neck and limit injurious movement.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patent Pending</div>
+              An embedded microsensor system triggers an airbag to immobilize the neck at the moment of peak rotational energy transmission when incipient motion exceeds a threshold linked to severe concussion risk.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Agricultural Biotechnology">
+            <div class="meta">
+              <span class="chip">Agricultural Biotechnology</span>
+            </div>
+            <h3>ABC Capsule™ &amp; Triboelectric Energizer</h3>
+            <p>A self-powered cow capsule that harvests rumen motion to generate electricity for limited bacteria reduction that mimics prophylactic antibiotic productivity boost without triggering antibiotic resistance.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">ABC Capsule Patented #11,800,851 Triboelectric Energizer Patent Pending</div>
+              The use of prophylactic antibiotics in cows reduces bacteria populations by a few percent; Soret band light can do this without promoting resistance. The triboelectric device, cow-magnet sized, harvests powerful rumen movement to power LEDs or any in-vivo sensors for the life of the animal.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Health &amp; Veterinary Care">
+            <div class="meta">
+              <span class="chip">Health &amp; Veterinary Care</span>
+            </div>
+            <h3>Motion Control Capsule (MCap™)</h3>
+            <p>A controllable capsule concept for the gastrointestinal tract that uses light-responsive material behavior to slow, stop, or manage movement.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patented #11,883,007 &amp;</div>
+              A steerable colonoscopy capsule that medical professionals can slow or stop with light-activated hydrogel expansion, similar to the way foods that expand can cause constipation. When light deactivates, the hydrogel shrinks and capsule motion continues. MCap is fail safe: if power fails, or the hydrogel detaches, it shrinks and passes. The second patent is a tether system with retrieval capability and real-time positional tracking, enabling the operator to navigate the capsule with physician-level intent and pause at any point of interest for detailed imaging.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Health &amp; Veterinary Care">
+            <div class="meta">
+              <span class="chip">Health &amp; Veterinary Care</span>
+            </div>
+            <h3>Encapsulated Microspheres™</h3>
+            <p>The echogenic ultrasound-visible coating for capsules and implants enables safe, non-radiative tracking and procedural visualization.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patent Pending</div>
+              The microsphere shell or structure, applied to any capsule or implant surface, makes the device clearly visible under standard clinical ultrasound, without the currently used X-ray or fluoroscopic technology that exposes patients to potential risks and requires specialized imaging suites.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Public &amp; Environmental Safety">
+            <div class="meta">
+              <span class="chip">Public &amp; Environmental Safety</span>
+            </div>
+            <h3>Level 3 Fire Detector (L3FD™)</h3>
+            <p>An electric tower thermopile fire-detection system that detects wildfire ignition by infrared wavelength analysis, catching fires early enough to prevent spread, at low infrastructure cost.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patented #12,424,068</div>
+              Current fire detection are reported when they become visible to people or aircraft, or from expensive, theft-prone infrared cameras. L3FD is low cost, easily deployed, and has no alternative resale value. Mounted on existing communication or utility towers, each L3FD unit uses an array of thermopile sensors to passively detect the specific infrared wavelength signatures of active flame, and not false positives.
+            </div>
+          </article>
+
+          <article class="panel card tech-card" data-category="Public &amp; Environmental Safety">
+            <div class="meta">
+              <span class="chip">Public &amp; Environmental Safety</span>
+            </div>
+            <h3>Butterfly Covers™</h3>
+            <p>A disposable N95 cover designed to reduce contamination risk during removal by enabling a controlled fold-away motion, preventing viral shedding.</p>
+            <button class="expand" type="button">Show more</button>
+            <div class="details">
+              <div class="patent-status">Patent Pending</div>
+              Butterfly Covers are designed to fold off the face rather than snap or peel, which generates mechanical agitation that disperses virions. Folding keeps the contaminated surface facing inward, trapping particles as the cover is removed. During pandemics, crisis conditions prevent adoption of new innovations. Butterfly Covers are best introduced and stockpiled during ordinary times.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="licensing">
+      <div class="container split">
+        <article class="panel feature">
+          <div class="tag">Licensing & collaboration</div>
+          <h2 style="margin:8px 0 12px;font-size:clamp(1.7rem,2.4vw,2.6rem);letter-spacing:-.02em;">Licensing & Collaboration</h2>
+          <p>
+            The site presents technologies for licensing, research collaboration, manufacturing discussion, validation, and co-development.
+          </p>
+          <p>
+            Each invention is positioned within a broader cross-disciplinary portfolio of applied technologies.
+          </p>
+        </article>
+
+        <article class="panel feature">
+          <div class="tag">Suggested calls to action</div>
+          <ul class="list">
+            <li>Portfolio overview or device-specific brief</li>
+            <li>Licensing or co-development opportunities</li>
+            <li>Prototype validation or pilot testing</li>
+            <li>Research collaboration</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <article class="panel feature">
+          <div class="tag">About</div>
+          <h2 style="margin:8px 0 12px;font-size:clamp(1.7rem,2.4vw,2.6rem);letter-spacing:-.02em;">Brian Michael Coyle</h2>
+          <p>
+            Inventor and founder developing patented and patent-pending technologies across veterinary health, diagnostics, biomechanics, public safety, agriculture, and environmental systems.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer-flex">
+      <div>
+        <div style="font-weight:700;color:var(--text);margin-bottom:6px">New Trick Pony</div>
+        <div>Innovation portfolio and technology overview.</div>
+      </div>
+      <div>
+        <div style="font-weight:700;color:var(--text);margin-bottom:6px">Contact</div>
+        <div>Email: bricoyle@berkeley.edu</div>
+        <div>Phone: 925-768-0059</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.classList.toggle('hidden', !show);
+        });
+      });
+    });
+
+    document.querySelectorAll('.expand').forEach(button => {
+      button.addEventListener('click', () => {
+        const details = button.nextElementSibling;
+        const open = details.classList.toggle('open');
+        button.textContent = open ? 'Show less' : 'Show more';
+      });
+    });
+  </script>
+</body>
+</html>
